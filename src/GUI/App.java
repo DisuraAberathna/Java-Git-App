@@ -5,6 +5,7 @@
 package GUI;
 
 import com.formdev.flatlaf.themes.FlatMacDarkLaf;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -18,6 +19,12 @@ public class App extends javax.swing.JFrame {
      */
     public App() {
         initComponents();
+        try {
+            ImageIcon imageIcon = new ImageIcon("src//resources//abstract.png");
+            this.setIconImage(imageIcon.getImage());
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Image not Found");
+        }
     }
 
     /**
