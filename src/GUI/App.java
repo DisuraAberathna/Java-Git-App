@@ -20,7 +20,7 @@ public class App extends javax.swing.JFrame {
     public App() {
         initComponents();
         try {
-            ImageIcon imageIcon = new ImageIcon("src//resources//abstract.png");
+            ImageIcon imageIcon = new ImageIcon(getClass().getResource("/resources/abstract.png"));
             this.setIconImage(imageIcon.getImage());
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Image not Found");
@@ -42,6 +42,7 @@ public class App extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
