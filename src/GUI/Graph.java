@@ -39,6 +39,7 @@ public class Graph extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,6 +59,13 @@ public class Graph extends javax.swing.JFrame {
             }
         });
 
+        jButton3.setText("Chart 3");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -66,7 +74,8 @@ public class Graph extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(jButton2)
+                    .addComponent(jButton3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 517, Short.MAX_VALUE)
                 .addContainerGap())
@@ -82,7 +91,9 @@ public class Graph extends javax.swing.JFrame {
                 .addComponent(jButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton2)
-                .addContainerGap(311, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton3)
+                .addContainerGap(278, Short.MAX_VALUE))
         );
 
         pack();
@@ -121,6 +132,22 @@ public class Graph extends javax.swing.JFrame {
         SwingUtilities.updateComponentTreeUI(jPanel1);
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        jPanel1.removeAll();
+
+        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+        dataset.setValue(50, "Marks", "Kasun");
+        dataset.setValue(80, "Marks", "Sahan");
+        dataset.setValue(68, "Marks", "Prabath");
+        dataset.setValue(72, "Marks", "Vishwa");
+
+        JFreeChart chart = ChartFactory.createBarChart("Software Project", "Student", "Marks", dataset);
+        ChartPanel panel = new ChartPanel(chart);
+
+        jPanel1.add(panel, BorderLayout.CENTER);
+        SwingUtilities.updateComponentTreeUI(jPanel1);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -138,6 +165,7 @@ public class Graph extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
