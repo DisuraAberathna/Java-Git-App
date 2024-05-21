@@ -6,10 +6,13 @@ package GUI;
 
 import com.formdev.flatlaf.themes.FlatMacDarkLaf;
 import java.awt.BorderLayout;
+import java.awt.Color;
 import javax.swing.SwingUtilities;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.chart.renderer.category.BarRenderer;
 import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.data.general.DefaultPieDataset;
 import org.jfree.data.general.PieDataset;
@@ -142,6 +145,13 @@ public class Graph extends javax.swing.JFrame {
         dataset.setValue(72, "Marks", "Vishwa");
 
         JFreeChart chart = ChartFactory.createBarChart("Software Project", "Student", "Marks", dataset);
+        chart.setBackgroundPaint(new Color(255, 255, 255));
+        chart.getCategoryPlot().setBackgroundPaint(new Color(30, 30, 30));
+        chart.getCategoryPlot().setOrientation(PlotOrientation.VERTICAL);
+
+        BarRenderer renderer = (BarRenderer) chart.getCategoryPlot().getRenderer();
+        renderer.setSeriesPaint(0, Color.BLUE);
+
         ChartPanel panel = new ChartPanel(chart);
 
         jPanel1.add(panel, BorderLayout.CENTER);
