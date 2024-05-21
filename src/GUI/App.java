@@ -20,7 +20,7 @@ public class App extends javax.swing.JFrame {
     public App() {
         initComponents();
         try {
-            ImageIcon imageIcon = new ImageIcon(getClass().getResource("/resources/abstract.png"));
+            ImageIcon imageIcon = new ImageIcon(getClass().getResource("/Resources/abstract.png"));
             this.setIconImage(imageIcon.getImage());
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Image not Found");
